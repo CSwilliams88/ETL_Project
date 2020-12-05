@@ -19,7 +19,16 @@ We then exported the final table of total injuries per team by season to a csv f
 ![drose.png](Images/drose.png)
 
 To complete the project we brought our two datasets into SQL tables. 
-We first made sure to drop the tables to ensure we do not overwrite them in this hypothetical database.
+First, we used Bulk Insert to read in the csv files that were the outputs of our python code. 
+We set the first row as 2 to allow for a header. 
+We made sure that SQL knows that the csv is delimited by commas.
+RowTerminator: ='\n'    Specifies the row terminator as a newline character. When a csv is read into SQL, SQL needs to know 
+what ends each line of the text. Now that it knows each value is differenitated by a comma, it will know that each row 
+ends with a \n. This is the default ending of comma delimted csv's. 
+Tablock: Forces SQL Server to use a table-level lock instead of row- or page-level locks. If used with HOLDLOCK, 
+then the lock will be held until the transaction completes. Otherwise, the lock is released as soon as the data is read. 
+For SELECT statements, this hint forces shared table locks. Using this hint with other statements (such as INSERT, UPDATE, or DELETE) will initiate exclusive table lock.
+We then made sure to drop the tables to ensure we do not overwrite them in this hypothetical database.
 Then we created the tables using Team Season as our primary key for both tables.
 Table 1 is named injuries_impact. We used varchar as our data type for Team Season because it has text, numbers, and special characters (-).
 Table 2 is named team_stats. Again, we used varchar as our data type for Team Season. 
@@ -27,8 +36,9 @@ For each column that was a percentage (Win Pct, Fieldgoal %, and Freethrow %) we
 For points we used float due to it being a standard number that isn't an integer. This number is an average so decimal points will be necessary. 
 For Personal fouls +/- we used float as well for the same reason as Points.
 Finally, we used the following code to show the results of the two tables and allow the user to begin their own analysis in SQL.
+SQL.
 
-![flow.png](Images/flow.png)
+
 
 
 

@@ -28,7 +28,8 @@ For points we used float due to it being a standard number that isn't an integer
 For Personal fouls +/- we used float as well for the same reason as Points.
 Finally, we used the following code to show the results of the two tables and allow the user to begin their own analysis in SQL.
 
-![Flow Chart.png](Images/Flow Chart.png)
+
+![Flow.png](Images/Flow.png)
 
 
 

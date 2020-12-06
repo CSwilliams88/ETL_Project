@@ -30,13 +30,12 @@ then the lock will be held until the transaction completes. Otherwise, the lock 
 For SELECT statements, this hint forces shared table locks. Using this hint with other statements (such as INSERT, UPDATE, or DELETE) will initiate exclusive table lock.
 We then made sure to drop the tables to ensure we do not overwrite them in this hypothetical database.
 Then we created the tables using Team Season as our primary key for both tables.
-Table 1 is named injuries_impact. We used varchar as our data type for Team Season because it has text, numbers, and special characters (-).
-Table 2 is named team_stats. Again, we used varchar as our data type for Team Season. 
+Table 1 is named injuries_count. We used varchar as our data type for Team Season because it has text, numbers, and special characters (-).
+Table 2 is named nba_team_stats. Again, we used varchar as our data type for Team Season. 
 For each column that was a percentage (Win Pct, Fieldgoal %, and Freethrow %) we used the decimal data type.
 For points we used float due to it being a standard number that isn't an integer. This number is an average so decimal points will be necessary. 
 For Personal fouls +/- we used float as well for the same reason as Points.
 Finally, we used the following code to show the results of the two tables and allow the user to begin their own analysis in SQL.
-SQL.
 
 
 
